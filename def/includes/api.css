@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    background: #222;
+    height: 100%;
+    width: 100%;
+    color: #bbb;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.card {
+    display:inline-block;
+    max-width: none !important;
+    text-align: left;
+    font-size: 13px;
+}
+
+.one, .three {
+    float: left;
+}
+
+.two, .fourth {
+    float: right;
+}
+
+.error {
+    display: inline-block;
+}
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0px;
+}
+

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" href="includes/api.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <title>Books Series WS API</title>
+    </head>
+    <body>
+            <h2>Books Series WS API</h2>
+            <div class="error">
+            <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">API call: Any</div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">error handeling</h5>
+                    <p>each of the api calls get's the following error:</p>
+                    <p class="card-text">
+                        <pre>
+{
+   error: 'error description'
+}
+                    </pre>
+                    </p>
+                </div>
+            </div>
+<div class="clear"></div>
+            <div class="card border-secondary mb-3 json" style="max-width: 18rem;">
+                    <div class="card-body text-secondary">
+                        <h5 class="card-title">json</h5>
+                        <p class="card-text">
+                            <pre>
+{
+    "booksSeries": [
+        {
+            "seriesName": "Harry Potter",
+            "author": "J. K. Rowling",
+            "genre": [
+                "fantasy novels",
+                "drama",
+                "coming of age",
+                "thriller",
+                "mystery",
+                "adventure",
+                "horror",
+                "romance"],
+            "releaseYear": "1997",
+            "filmed": "true",
+            "books": [
+                {
+                    "bookName": "The Philosopher's Stone",
+                    "releaseYear": "1997"
+                },
+                {
+                    "bookName": "The Chamber of Secrets",
+                    "releaseYear": "1998"
+                },
+                {
+                    "bookName": "The Prisoner of Azkaban",
+                    "releaseYear": "1999"
+                },
+                {
+                    "bookName": "The Goblet of Fire",
+                    "releaseYear": "2000"
+                },
+                {
+                    "bookName": "The Order of the Phoenix",
+                    "releaseYear": "2003"
+                },
+                {
+                    "bookName": "The Half-Blood Prince",
+                    "releaseYear": "2005"
+                },
+                {
+                    "bookName": "The Deathly Hallows",
+                    "releaseYear": "2007"
+                }
+            ] 
+        },
+        
+        {
+            "seriesName": "The Hunger Games",
+            "author": "Suzanne Collins",
+            "genre": [
+                "Dystopian",
+                "adventure", 
+                "science", 
+                "fiction", 
+                "drama", 
+                "action"
+            ],
+            "releaseYear": "2008",
+            "filmed": "true",
+            "books": [
+                {
+                    "bookName": "The Hunger Games",
+                    "releaseYear": "2008"
+                },
+                {
+                    "bookName": "Catching Fire",
+                    "releaseYear": "2009"
+                },
+                {
+                    "bookName": "Mockingjay",
+                    "releaseYear": "2010"
+                }
+            ] 
+        },
+        
+        {
+            "seriesName": "The Chronicles of Narnia",
+            "author": "C. S. Lewis",
+            "genre": ["fantasy", "children's literature"],
+            "releaseYear": "1950",
+            "filmed": "true",
+            "books": [
+                {
+                    "bookName": "The Lion, the Witch and the Wardrobe",
+                    "releaseYear": "1950"
+                },
+                {
+                    "bookName": "Prince Caspian",
+                    "releaseYear": "1951"
+                },
+                {
+                    "bookName": "The Voyage of the Dawn Treader",
+                    "releaseYear": "1952"
+                },
+                {
+                    "bookName": "The Silver,Chair",
+                    "releaseYear": "1953"
+                },
+                {
+                    "bookName": "The Horse and His Boy",
+                    "releaseYear": "1954"
+                },
+                {
+                    "bookName": "The Magician's Nephew",
+                    "releaseYear": "1955"
+                },
+                {
+                    "bookName": "The Last Battle ",
+                    "releaseYear": "1956"
+                }
+            ] 
+        },
+        
+        {
+            "seriesName": "The Lord of the Rings",
+            "author": "J. R. R. Tolkien",
+            "genre": ["fantasy", "adventure"],
+            "releaseYear": "1954",
+            "filmed": "true",
+            "books": [
+                {
+                    "bookName": "The Fellowship of the Ring",
+                    "releaseYear": "1954"
+                },
+                {
+                    "bookName": "The Two Towers",
+                    "releaseYear": "1954"
+                },
+                {
+                    "bookName": "The Return of the King",
+                    "releaseYear": "1955"
+                }
+            ] 
+        }
+    ]  
+}
+                        </pre>
+                        </p>
+                    </div>
+                </div>
+            </div>
+<div class="one">
+            <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">API call: <a target="_blank" href=""></a></div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">allSerieses</h5>
+                    <p class="card-text">
+                        <p>Relative Path: /allSerieses/:userId</p>
+                        <p>Verb: GET</p>
+                        <p>API respond: </p>
+                        <pre>
+[{
+    "seriesName": "The Lord of the Rings",
+    "author": "J. R. R. Tolkien",
+    "genre": ["fantasy", "adventure"],
+    "releaseYear": "1954",
+    "filmed": "true",
+    "books": [
+        {
+            "bookName": "The Fellowship of the Ring",
+            "releaseYear": "1954"
+        },
+        {
+            "bookName": "The Two Towers",
+            "releaseYear": "1954"
+        },
+        {
+            "bookName": "The Return of the King",
+            "releaseYear": "1955"
+        }
+    ] 
+},
+{...}]
+                    </pre>
+                    </p>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="card border-secondary mb-3 three" style="max-width: 18rem;">
+                    <div class="card-header">API call: <a target="_blank" href=""></a></div>
+                    <div class="card-body text-secondary">
+                        <h5 class="card-title">seriesesByParamsGA</h5>
+                        <p class="card-text">
+                            <p>Relative Path: /seriesesByParamsGA/:userId</p>
+                            <p>Verb: POST</p>
+                            <p>Params: {genre: 'genre', author: 'author'}</p>
+                            <p>API respond: </p>
+                            <pre>
+[{
+    "seriesName": "The Lord of the Rings",
+    "author": "J. R. R. Tolkien",
+    "genre": ["fantasy", "adventure"],
+    "releaseYear": "1954",
+    "filmed": "true",
+    "books": [
+        {
+            "bookName": "The Fellowship of the Ring",
+            "releaseYear": "1954"
+        },
+        {
+            "bookName": "The Two Towers",
+            "releaseYear": "1954"
+        },
+        {
+            "bookName": "The Return of the King",
+            "releaseYear": "1955"
+        }
+    ] 
+},
+{...}]
+                        </pre>
+                        </p>
+                    </div>
+                </div> 
+</div>
+
+<div class="two">
+
+            <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">API call: <a target="_blank" href=""></a></div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">seriesByName</h5>
+                    <p class="card-text">
+                        <p>Relative Path: /seriesByName/:userId</p>
+                        <p>Verb: POST</p>
+                        <p>Params: {seriesName: 'series name'}</p>
+                        <p>API respond: </p>
+                        <pre>
+{
+    "seriesName": "The Lord of the Rings",
+    "author": "J. R. R. Tolkien",
+    "genre": ["fantasy", "adventure"],
+    "releaseYear": "1954",
+    "filmed": "true",
+    "books": [
+        {
+            "bookName": "The Fellowship of the Ring",
+            "releaseYear": "1954"
+        },
+        {
+            "bookName": "The Two Towers",
+            "releaseYear": "1954"
+        },
+        {
+            "bookName": "The Return of the King",
+            "releaseYear": "1955"
+        }
+    ] 
+}
+                    </pre>
+                    </p>
+                </div>
+            </div> 
+            <div class="clear"></div>
+           
+
+                <div class="card border-secondary mb-3 fourth" style="max-width: 18rem;">
+                <div class="card-header">API call: <a target="_blank" href=""></a></div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">seriesesByParamsAB</h5>
+                    <p class="card-text">
+                        <p>Relative Path: /seriesesByParamsAB/:userId</p>
+                        <p>Verb: POST</p>
+                        <p>Params: {author: 'author', bookName: 'bookName'}</p>
+                        <p>API respond: </p>
+                        <pre>
+{
+    "seriesName": "The Lord of the Rings",
+    "author": "J. R. R. Tolkien",
+    "genre": ["fantasy", "adventure"],
+    "releaseYear": "1954",
+    "filmed": "true",
+    "books": [
+        {
+            "bookName": "The Fellowship of the Ring",
+            "releaseYear": "1954"
+        },
+        {
+            "bookName": "The Two Towers",
+            "releaseYear": "1954"
+        },
+        {
+            "bookName": "The Return of the King",
+            "releaseYear": "1955"
+        }
+    ] 
+}
+                    </pre>
+                    </p>
+                </div>
+                </div>
+            </div> 
+    </body>
+</html>
