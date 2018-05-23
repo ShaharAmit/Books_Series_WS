@@ -37,7 +37,7 @@ app.param('userId', (req, res, next, userId) => {
     })
 });
 
-app.all('/', (req, res) => res.sendFile('./assets/'));
+app.all('/', (req, res) => res.sendFile('./assets/index.html'));
 
 //every search urls needs userID
 app.get('/allSerieses/:userId', (req, res) => {
@@ -67,7 +67,7 @@ app.post('/seriesesByParamsAB/:userId', (req, res) => {
 
 //redirect to main page if unreconized url
 app.all('*', (req, res) => {
-    res.redirect('./assets/');
+    res.redirect('./assets/index.html');
 });
 
 app.listen(port, () => console.log(`Server is listening on ${port}`));

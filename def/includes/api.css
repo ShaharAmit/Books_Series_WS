@@ -20,7 +20,7 @@ h2 {
     display:inline-block;
     max-width: none !important;
     text-align: left;
-    font-size: 13px;
+    font-size: 0.8vw;
 }
 
 .one, .three {
