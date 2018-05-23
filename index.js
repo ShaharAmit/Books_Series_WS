@@ -68,8 +68,6 @@ app.post('/seriesesByParamsAB/:userId', (req, res) => {
 });
 
 //redirect to main page if unreconized url
-app.all('*', (req, res) => {
-    res.redirect(`assets/`);
-});
+app.all('*', (req, res) => res.sendFile(`assets/`));
 
 app.listen(port, () => console.log(`Server is listening on ${port}`));
