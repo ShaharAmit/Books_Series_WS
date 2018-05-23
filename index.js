@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 app.use('/assets', express.static(`${__dirname}/def`));
+app.use(express.static(__dirname + '/def'));
 
 //every response is json
 app.use(
@@ -38,7 +39,7 @@ app.param('userId', (req, res, next, userId) => {
     })
 });
 
-app.all('/', (req, res) => res.sendFile(`assets`));
+app.all('/', (req, res) => res.sendFile(`assets/`));
 
 //every search urls needs userID
 app.get('/allSerieses/:userId', (req, res) => {
