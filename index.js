@@ -37,7 +37,7 @@ app.param('userId', (req, res, next, userId) => {
     })
 });
 
-app.all('/', (req, res) => res.sendFile(`assets/`));
+app.all('/', (req, res) => res.sendFile(`${__dirname}/assets/index.html`));
 
 //every search urls needs userID
 app.get('/allSerieses/:userId', (req, res) => {
