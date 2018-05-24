@@ -68,6 +68,8 @@ app.post('/seriesesByParamsAB/:userId', (req, res) => {
 });
 
 //redirect to main page if unreconized url
-app.all('*', (req, res) => res.sendFile(`assets/`));
+app.all('*', (req, res) => {
+    res.redirect('https://books-series.herokuapp.com');
+});
 
 app.listen(port, () => console.log(`Server is listening on ${port}`));
